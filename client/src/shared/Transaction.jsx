@@ -21,13 +21,13 @@ const isWalletConnected = async () => {
   try {
     if (!ethereum) {
       return alert("Please install Metamask");
-      const accounts = await ethereum.request({ method: "eth_accounts" });
+    }
+    const accounts = await ethereum.request({ method: "eth_accounts" });
 
-      if (accounts.length) {
-        setGlobalState("connectedAccount", accounts[0]);
-      } else {
-        console.log("No Accounts found!");
-      }
+    if (accounts.length) {
+      setGlobalState("connectedAccount", accounts[0]);
+    } else {
+      console.log("No Accounts found!");
     }
   } catch (err) {
     console.log(err);
@@ -120,8 +120,8 @@ const getAllTransactions = async () => {
       }))
       .reverse();
 
-      setGlobalState('transactions', structuredTransactions)
-      return structuredTransactions;
+    setGlobalState("transactions", structuredTransactions);
+    return structuredTransactions;
   } catch (err) {
     console.log(err);
     throw new Error("No ethereum object.");
