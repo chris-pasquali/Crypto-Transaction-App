@@ -10,7 +10,7 @@ const Header = () => {
           src={ethLogo}
           alt="Etherium Logo"
         />
-        <span>Dalto</span>
+        <h1 className="text-lg font-bold pl-2 hover:font-extrabold hover:text-xl">CryptoTransaction</h1>
       </div>
       <nav className="flex flex-row justify-center items-center list-none">
         <li className="cursor-pointer mr-3 hover:text-blue-500">Pricing</li>
